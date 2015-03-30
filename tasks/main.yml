@@ -1,0 +1,15 @@
+---
+- name: Install extra pachages and msmtp
+  apt: "pkg={{ item }} state=latest force=yes update_cache=yes"
+  with_items:
+    - build-essential
+    - ca-certificates
+    - msmtp
+
+- name: Configure msmtp
+  template: >
+    src=mstprc.j2
+    dest=/etc/mstprc
+    owner=root
+    group=root
+    mode=0644

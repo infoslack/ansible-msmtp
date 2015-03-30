@@ -1,0 +1,19 @@
+account {{account}}
+
+auth  on
+tls   on
+tls_certcheck on
+{% if msmtp_tls_trust_file is defined %}
+tls_trust_file {{msmtp_tls_trust_file}}
+{% else %}
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+{% endif %}
+
+host {{smtp_host}}
+port {{smtp_port}}
+from {{email_from}}
+user {{smtp_user}}
+password {{smtp_pass}}
+
+logfile /var/log/msmtp.log
+account default: {{account}}

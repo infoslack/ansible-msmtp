@@ -1,0 +1,8 @@
+---
+account: gmail
+msmtp_tls_trust_file: #using default if is not defined
+smtp_host: "smtp.gmail.com"
+smtp_port: 587
+email_from: "john@example.org"
+smtp_user: "john@example.org"
+smtp_pass: "My_secret_pass123"
